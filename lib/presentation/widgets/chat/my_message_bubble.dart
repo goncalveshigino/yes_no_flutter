@@ -17,7 +17,7 @@ class MyMessageBubble extends StatelessWidget {
           child: const Padding(
             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
             child: Text(
-              'Pariatur minim quis officia in nostrud duis.',
+              'Pariatur minim quis',
               style: TextStyle(color: Colors.white),
             ),
           ),
@@ -26,7 +26,7 @@ class MyMessageBubble extends StatelessWidget {
         const SizedBox(
           height: 10,
         )
-        
+
       ],
     );
   }
