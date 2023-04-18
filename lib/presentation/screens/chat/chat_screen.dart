@@ -8,6 +8,7 @@ import 'package:yes_no_app/presentation/widgets/chat/my_message_bubble.dart';
 import 'package:yes_no_app/presentation/widgets/shared/message_field_box.dart';
 
 class ChatScreen extends StatelessWidget {
+
   const ChatScreen({super.key});
 
   @override
@@ -31,7 +32,9 @@ class ChatScreen extends StatelessWidget {
 class _ChatView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+
     final chatProvider = context.watch<ChatProvider>();
+    
 
     return SafeArea(
       child: Padding(
@@ -44,15 +47,18 @@ class _ChatView extends StatelessWidget {
               child: ListView.builder(
                 itemCount: chatProvider.messageList.length,
                 itemBuilder: (context, index) {
+
                   final message = chatProvider.messageList[index];
 
                   return (message.fromWho == FromWho.hers)
                       ? const HerMessageBubble()
-                      : const MyMessageBubble();
+                      :  MyMessageBubble( message: message );
                 },
               ),
             ),
-            const MessageFieldBox()
+             MessageFieldBox(
+              onValue: (value) => chatProvider.sendMessage(value),
+            )
           ],
         ),
       ),
