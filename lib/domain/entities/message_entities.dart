@@ -1,13 +1,13 @@
 enum FromWho { me, hers }
 
-class MessageEntitie {
+class MessageEntity {
   final String? text;
   final String? imageUrl;
   final FromWho fromWho;
 
 
 
-   MessageEntitie({
+   MessageEntity({
       required this.text,
       this.imageUrl, 
       required this.fromWho,

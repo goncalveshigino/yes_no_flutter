@@ -10,7 +10,7 @@ class MyMessageBubble extends StatelessWidget {
 
   final chatProvider = ChatProvider();
 
-  final MessageEntitie message;
+  final MessageEntity message;
 
   @override
   Widget build(BuildContext context) {

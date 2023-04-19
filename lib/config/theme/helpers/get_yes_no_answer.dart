@@ -5,15 +5,11 @@ import 'package:yes_no_app/infrastructure/yes_no_model.dart';
 class GetYesNoAnswer {
   final _dio = Dio();
 
-  Future<MessageEntitie> getAnswer() async {
+  Future<MessageEntity> getAnswer() async {
     final response = await _dio.get('https://yesno.wtf/api');
 
-    final yesNoModel = YesNoModel.fromJsonMap(response.data);
+    final yesNoModel = YesNoModel.fromJson(response.data);
 
-    return MessageEntitie(
-      text: yesNoModel.answer,
-      fromWho: FromWho.hers,
-      imageUrl: yesNoModel.image,
-    );
+    return yesNoModel.toMessaEntity();
   }
 }

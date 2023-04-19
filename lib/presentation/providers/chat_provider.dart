@@ -6,14 +6,14 @@ class ChatProvider extends ChangeNotifier {
   final chatScrollController = ScrollController();
   final getYesNoAnswer = GetYesNoAnswer();
 
-  List<MessageEntitie> messageList = [
-    MessageEntitie(text: 'Ola Amor', fromWho: FromWho.me),
-    MessageEntitie(text: 'Estas em casa?', fromWho: FromWho.me)
+  List<MessageEntity> messageList = [
+    MessageEntity(text: 'Ola Amor', fromWho: FromWho.me),
+    MessageEntity(text: 'Estas em casa?', fromWho: FromWho.me)
   ];
 
   Future<void> sendMessage(String text) async {
     if (text.isEmpty) return;
-    final newMessage = MessageEntitie(text: text, fromWho: FromWho.me);
+    final newMessage = MessageEntity(text: text, fromWho: FromWho.me);
     messageList.add(newMessage);
 
     if (text.endsWith('?')) {
